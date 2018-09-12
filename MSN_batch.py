@@ -9,10 +9,10 @@ def Synnmda():
         # fill in with parameters to explore and range of values (key has to coincide with a variable in simConfig)
         params['gnmdad1'] = list(np.linspace(0.001,0.05,20))
         params['gnmdad2'] = list(np.linspace(0.01,0.02,20))
-        params['ampan01'] = [1,2,3,4,5]
-        params['ampan02'] = [1,2,3,4,5]
-        params['nmdan01'] = [1,2,3,4,5]
-        params['nmdan02'] = [1,2,3,4,5]
+        # params['ampan01'] = [1,2,3,4,5]
+        # params['ampan02'] = [1,2,3,4,5]
+        # params['nmdan01'] = [1,2,3,4,5]
+        # params['nmdan02'] = [1,2,3,4,5]
         # create Batch object with paramaters to modify, and specifying files to use
         b = Batch(params=params, cfgFile='MSN_cfg.py', netParamsFile='MSN_params.py',)
 
