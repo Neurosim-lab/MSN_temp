@@ -16,7 +16,7 @@ cfg.recordStep = 0.1 # Step size in ms to save data (eg. V traces, LFP, etc)
 cfg.hParams = {'v_init': -80.0}
 
 cfg.filename = 'MSN_net'  # Set file output name
-cfg.saveJson = False 	
+cfg.saveJson = True 	
 cfg.printPopAvgRates = False
 #cfg.analysis['plotRaster'] = {'saveFig': True} 			# Plot a raster
 #cfg.analysis['plotSpikeStats']={'include' : ['allCells'], 'timeRange' : None, 'graphType': 'boxplot', 'stats' : ['rate', 'isicv'], 'saveData' : 'stat.json', 'saveFig' : 'spikes', 'showFig' : False}
