@@ -13,8 +13,8 @@ except:
 ###############################################################################
 # NETWORK PARAMETERS
 #cellRule = netParams.importCellParams(label='PT5B_full', conds={'cellType': 'PT', 'cellModel': 'HH_full'},
-#	  fileName='cells/PTcell.hoc', cellName='PTcell', cellArgs=[ihMod2str[cfg.ihModel], cfg.ihSlope], soma_0AtOrigin=True)
-#	nonSpiny = ['apic_0', 'apic_1']
+#     fileName='cells/PTcell.hoc', cellName='PTcell', cellArgs=[ihMod2str[cfg.ihModel], cfg.ihSlope], soma_0AtOrigin=True)
+#   nonSpiny = ['apic_0', 'apic_1']
 #netParams.popParams['PT5B'] = {'cellModel': 'HH_full', 'cellType': 'PT', 'ynormRange': layer['5B'], 'numCells':1}
 ###############################################################################
 
@@ -40,42 +40,42 @@ netParams.lengthConst = 95
 
 # Synaptic mechanism parameters
 netParams.synMechParams['AMPAd1'] = {'mod': 'AMPAd1', 'tau_r': 2.2933, 'tau_d': 1.7977, 'gbar': 0.00021}
-netParams.synMechParams['GABAd1'] = {'mod': 'GABAd1', 'tau_r': 6.08314833, 'tau_d': 5.16873033,'gbar':0.00144454}
+netParams.synMechParams['GABAd1'] = {'mod': 'GABAd1', 'tau_r': 6.08314833, 'tau_d': 5.16873033,'gbar':0.00244454}
 netParams.synMechParams['NMDAd1'] = {'mod': 'NMDAd1', 'tau_r': 2.2312, 'tau_d': 56, 'gbar': cfg.gnmdad1}
 netParams.synMechParams['exc'] = {'mod': 'Exp2Syn'}  # excitatory synaptic mechanism
 #netParams.synMechParams['GABAd1'] = {'mod': 'Exp2Syn', 'tau1': 0.6, 'tau2': 8.5, 'e': -75}
-netParams.stimSourceParams['AMPAd1'] = {'type': 'NetStim', 'rate': 10, 'noise': 0.5, 'start': 1}
+netParams.stimSourceParams['AMPAd1'] = {'type': 'NetStim', 'rate': cfg.fred1, 'noise': 0.5, 'start': 1}
 netParams.stimTargetParams['AMPAd1->D1MSN'] = {'source': 'AMPAd1', 'sec': 'soma_0','conds': {'pop': 'D1MSN'}, 'synsPerConn':6,'synMech':'AMPAd1'}
 netParams.stimTargetParams['AMPAd1->D1MSN'] = {'source': 'AMPAd1', 'sec': 'prox','conds': {'pop': 'D1MSN'}, 'synsPerConn':12,'synMech':'AMPAd1'}
 netParams.stimTargetParams['AMPAd1->D1MSN'] = {'source': 'AMPAd1', 'sec': 'mid','conds': {'pop': 'D1MSN'}, 'synsPerConn':24,'synMech':'AMPAd1'}
 netParams.stimTargetParams['AMPAd1->D1MSN'] = {'source': 'AMPAd1', 'sec': 'dist','conds': {'pop': 'D1MSN'}, 'synsPerConn':54,'synMech':'AMPAd1'}
-netParams.stimSourceParams['GABAd1'] = {'type': 'NetStim', 'rate': 10, 'noise': 0.5, 'start': 1}
+netParams.stimSourceParams['GABAd1'] = {'type': 'NetStim', 'rate': 0.25*cfg.fred1, 'noise': 0.5, 'start': 1}
 netParams.stimTargetParams['GABAd1->D1MSN'] = {'source': 'GABAd1', 'sec':'soma_0','conds': {'pop': 'D1MSN'}, 'synsPerConn':6,'synMech':'GABAd1'}
 netParams.stimTargetParams['GABAd1->D1MSN'] = {'source': 'GABAd1', 'sec':'prox','conds': {'pop': 'D1MSN'}, 'synsPerConn':12,'synMech':'GABAd1'}
 netParams.stimTargetParams['GABAd1->D1MSN'] = {'source': 'GABAd1', 'sec':'mid','conds': {'pop': 'D1MSN'}, 'synsPerConn':24,'synMech':'GABAd1'}
 netParams.stimTargetParams['GABAd1->D1MSN'] = {'source': 'GABAd1', 'sec':'dist','conds': {'pop': 'D1MSN'}, 'synsPerConn':54,'synMech':'GABAd1'}
-netParams.stimSourceParams['NMDAd1'] = {'type': 'NetStim', 'rate': 10, 'noise': 0.5, 'start': 1}
+netParams.stimSourceParams['NMDAd1'] = {'type': 'NetStim', 'rate': cfg.fred1, 'noise': 0.5, 'start': 1}
 netParams.stimTargetParams['NMDAd1->D1MSN'] = {'source': 'NMDAd1', 'sec':'soma_0','conds': {'pop': 'D1MSN'}, 'synsPerConn':18,'synMech':'NMDAd1'}
 netParams.stimTargetParams['NMDAd1->D1MSN'] = {'source': 'NMDAd1', 'sec':'prox','conds': {'pop': 'D1MSN'}, 'synsPerConn':36,'synMech':'NMDAd1'}
 netParams.stimTargetParams['NMDAd1->D1MSN'] = {'source': 'NMDAd1', 'sec':'mid','conds': {'pop': 'D1MSN'}, 'synsPerConn':72,'synMech':'NMDAd1'}
 netParams.stimTargetParams['NMDAd1->D1MSN'] = {'source': 'NMDAd1', 'sec':'dist','conds': {'pop': 'D1MSN'}, 'synsPerConn':138,'synMech':'NMDAd1'}
 
 
-netParams.synMechParams['AMPAd2'] = {'mod': 'AMPAd2', 'tau_r': 2.3739, 'tau_d': 1.930833, 'gbar': 0.0023}
-netParams.synMechParams['GABAd2'] = {'mod': 'GABAd2', 'tau_r': 2.357801, 'tau_d': 7.774735,'gbar':0.0080164}
+netParams.synMechParams['AMPAd2'] = {'mod': 'AMPAd2', 'tau_r': 2.3739, 'tau_d': 1.930833, 'gbar': 0.0021}
+netParams.synMechParams['GABAd2'] = {'mod': 'GABAd2', 'tau_r': 2.357801, 'tau_d': 7.774735,'gbar':0.0050164}
 netParams.synMechParams['NMDAd2'] = {'mod': 'NMDAd2', 'tau_r': 2.2312, 'tau_d': 56, 'gbar': cfg.gnmdad2}
 #netParams.synMechParams['GABAd2'] = {'mod': 'Exp2Syn', 'tau1': 0.6, 'tau2': 8.5, 'e': -75}
-netParams.stimSourceParams['AMPAd2'] = {'type': 'NetStim', 'rate': 10, 'noise': 0.5, 'start': 1}
+netParams.stimSourceParams['AMPAd2'] = {'type': 'NetStim', 'rate': cfg.fred2, 'noise': 0.5, 'start': 1}
 netParams.stimTargetParams['AMPAd2->D1MSN'] = {'source': 'AMPAd2', 'sec': 'soma_0','conds': {'pop': 'D2MSN'}, 'synsPerConn':6,'synMech':'AMPAd2'}
 netParams.stimTargetParams['AMPAd2->D1MSN'] = {'source': 'AMPAd2', 'sec': 'prox','conds': {'pop': 'D2MSN'}, 'synsPerConn':12,'synMech':'AMPAd2'}
 netParams.stimTargetParams['AMPAd2->D1MSN'] = {'source': 'AMPAd2', 'sec': 'mid','conds': {'pop': 'D2MSN'}, 'synsPerConn':24,'synMech':'AMPAd2'}
 netParams.stimTargetParams['AMPAd2->D1MSN'] = {'source': 'AMPAd2', 'sec': 'dist','conds': {'pop': 'D2MSN'}, 'synsPerConn':58,'synMech':'AMPAd2'}
-netParams.stimSourceParams['GABAd2'] = {'type': 'NetStim', 'rate': 10, 'noise': 0.5, 'start': 1}
+netParams.stimSourceParams['GABAd2'] = {'type': 'NetStim', 'rate': cfg.fred2*0.25, 'noise': 0.5, 'start': 1}
 netParams.stimTargetParams['GABAd2->D1MSN'] = {'source': 'GABAd2', 'sec':'soma_0','conds': {'pop': 'D2MSN'}, 'synsPerConn':6,'synMech':'GABAd2'}
 netParams.stimTargetParams['GABAd2->D1MSN'] = {'source': 'GABAd2', 'sec':'prox','conds': {'pop': 'D2MSN'}, 'synsPerConn':12,'synMech':'GABAd2'}
 netParams.stimTargetParams['GABAd2->D1MSN'] = {'source': 'GABAd2', 'sec':'mid','conds': {'pop': 'D2MSN'}, 'synsPerConn':24,'synMech':'GABAd2'}
 netParams.stimTargetParams['GABAd2->D1MSN'] = {'source': 'GABAd2', 'sec':'dist','conds': {'pop': 'D2MSN'}, 'synsPerConn':54,'synMech':'GABAd2'}
-netParams.stimSourceParams['NMDAd2'] = {'type': 'NetStim', 'rate': 10, 'noise': 0.5, 'start': 1}
+netParams.stimSourceParams['NMDAd2'] = {'type': 'NetStim', 'rate': cfg.fred2, 'noise': 0.5, 'start': 1}
 netParams.stimTargetParams['NMDAd2->D1MSN'] = {'source': 'NMDAd2', 'sec':'soma_0','conds': {'pop': 'D2MSN'}, 'synsPerConn':18,'synMech':'NMDAd2'}
 netParams.stimTargetParams['NMDAd2->D1MSN'] = {'source': 'NMDAd2', 'sec':'prox','conds': {'pop': 'D2MSN'}, 'synsPerConn':36,'synMech':'NMDAd2'}
 netParams.stimTargetParams['NMDAd2->D1MSN'] = {'source': 'NMDAd2', 'sec':'mid','conds': {'pop': 'D2MSN'}, 'synsPerConn':72,'synMech':'NMDAd2'}
@@ -93,11 +93,11 @@ netParams.stimTargetParams['AMPAf->FSI'] = {'source': 'AMPAf', 'sec':'soma_0','c
 #netParams_d1.stimTargetParams['Input_1->D1MSN'] = {'source': 'Input_1', 'sec':'soma_0', 'loc': 0.8, 'conds': {'pop':'D1MSN', 'cellList': range(10)}}
 
 netParams.stimSourceParams['Input_4'] = {'type': 'NetStim', 'rate': 10, 'number': 2, 'start': 1, 'noise': 0.2,'dur': 250}
-netParams.stimSourceParams['Input_down1'] = {'type': 'NetStim', 'rate': 1, 'number': 2, 'start': 1, 'noise': 0.2,'dur': 250}
+netParams.stimSourceParams['Input_down1'] = {'type': 'NetStim', 'rate': 1, 'number': 1, 'start': 1, 'noise': 0.2,'dur': 250}
 netParams.stimSourceParams['Input_d'] = {'type': 'NetStim', 'rate': 10, 'number': 2, 'start': 500, 'noise': 0.2,'dur':250}
-netParams.stimSourceParams['Input_down2'] = {'type': 'NetStim', 'rate': 1, 'number': 2, 'start': 750, 'noise': 0.2,'dur': 250}
+netParams.stimSourceParams['Input_down2'] = {'type': 'NetStim', 'rate': 1, 'number': 1, 'start': 750, 'noise': 0.2,'dur': 250}
 netParams.stimSourceParams['Input_d2'] = {'type': 'NetStim', 'rate': 10, 'number': 2, 'start': 1000, 'noise': 0.2,'dur':250}
-netParams.stimSourceParams['Input_down3'] = {'type': 'NetStim', 'rate': 1, 'number': 2, 'start': 1250, 'noise': 0.2,'dur': 250}
+netParams.stimSourceParams['Input_down3'] = {'type': 'NetStim', 'rate': 1, 'number': 1, 'start': 1250, 'noise': 0.2,'dur': 250}
 #netParams.stimTargetParams['Input_4->D1MSN'] = {'source': 'Input_4', 'sec':'soma_0', 'conds': {'pop':'D1MSN', 'cellList': range(20)},'synMech': 'exc'}
 #netParams.stimTargetParams['Input_4->D2MSN'] = {'source': 'Input_4', 'sec':'soma_0','conds': {'pop':'D2MSN', 'cellList': range(20)},'synMech': 'exc'}
 netParams.stimTargetParams['Input4->FSI'] = {
@@ -113,14 +113,14 @@ netParams.stimTargetParams['Input4->D1'] = {
         'sec':'soma_0',
         'delay': 1,
         'conds': {'pop':'D1MSN', 'cellList': range(100)},
-		'synsPerConn':cfg.ampan01,'synMech': 'AMPAd1','dur': 250}
+        'synsPerConn':cfg.nmdan01,'synMech': 'AMPAd1','dur': 250}
 
 netParams.stimTargetParams['Input4->D2'] = {
         'source': 'Input_4',
         'sec':'soma_0',
         'delay': 1,
         'conds': {'pop':'D2MSN', 'cellList': range(100)},
-		'synsPerConn':cfg.ampan02,'synMech': 'AMPAd2','dur': 250}
+        'synsPerConn':cfg.nmdan02,'synMech': 'AMPAd2','dur': 250}
 
 netParams.stimTargetParams['Input4->D1'] = {
         'source': 'Input_4',
@@ -149,7 +149,7 @@ netParams.stimTargetParams['Input_d->D1'] = {
         'sec':'soma_0',
         'delay': 1,
         'conds': {'pop':'D1MSN', 'cellList': range(100)},
-        'synsPerConn':cfg.ampan01,'synMech': 'AMPAd1','dur': 250}
+        'synsPerConn':cfg.nmdan01,'synMech': 'AMPAd1','dur': 250}
 
 netParams.stimTargetParams['Input_d->D2'] = {
         'source': 'Input_d',
@@ -157,7 +157,7 @@ netParams.stimTargetParams['Input_d->D2'] = {
         'delay': 1,
         'weight':1,
         'conds': {'pop':'D2MSN', 'cellList': range(100)},
-        'synsPerConn':cfg.ampan02,'synMech': 'AMPAd2','dur': 250}
+        'synsPerConn':cfg.nmdan02,'synMech': 'AMPAd2','dur': 250}
 
 netParams.stimTargetParams['Input_d->D1'] = {
         'source': 'Input_d',
@@ -171,7 +171,7 @@ netParams.stimTargetParams['Input_d->D2'] = {
         'sec':'soma_0',
         'delay': 1,
         'conds': {'pop':'D2MSN', 'cellList': range(100)},
-        'synsPerConn':cfg.nmdan01,'synMech': 'NMDAd2','dur': 250}
+        'synsPerConn':cfg.nmdan02,'synMech': 'NMDAd2','dur': 250}
 
 netParams.stimTargetParams['Input_d2->FSI'] = {
         'source': 'Input_d2',
@@ -186,7 +186,7 @@ netParams.stimTargetParams['Input_d2->D1'] = {
         'sec':'soma_0',
         'delay': 1,
         'conds': {'pop':'D1MSN', 'cellList': range(100)},
-        'synsPerConn':cfg.ampan01,'synMech': 'AMPAd1','dur': 250}
+        'synsPerConn':cfg.nmdan01,'synMech': 'AMPAd1','dur': 250}
 
 netParams.stimTargetParams['Input_d2->D2'] = {
         'source': 'Input_d2',
@@ -194,7 +194,7 @@ netParams.stimTargetParams['Input_d2->D2'] = {
         'delay': 1,
         'weight':1,
         'conds': {'pop':'D2MSN', 'cellList': range(100)},
-        'synsPerConn':cfg.ampan02,'synMech': 'AMPAd2','dur': 250}
+        'synsPerConn':cfg.nmdan02,'synMech': 'AMPAd2','dur': 250}
 
 netParams.stimTargetParams['Input_d2->D1'] = {
         'source': 'Input_d2',
@@ -223,7 +223,7 @@ netParams.stimTargetParams['Input_down1->D1'] = {
         'sec':'soma_0',
         'delay': 1,
         'conds': {'pop':'D1MSN', 'cellList': range(100)},
-        'synsPerConn':cfg.ampan01,'synMech': 'AMPAd1','dur': 250}
+        'synsPerConn':cfg.nmdan01,'synMech': 'AMPAd1','dur': 250}
 
 netParams.stimTargetParams['Input_down1->D2'] = {
         'source': 'Input_down1',
@@ -231,7 +231,7 @@ netParams.stimTargetParams['Input_down1->D2'] = {
         'delay': 1,
         'weight':1,
         'conds': {'pop':'D2MSN', 'cellList': range(100)},
-        'synsPerConn':cfg.ampan02,'synMech': 'AMPAd2','dur': 250}   
+        'synsPerConn':cfg.nmdan02,'synMech': 'AMPAd2','dur': 250}   
 
 netParams.stimTargetParams['Input_down1->D1'] = {
         'source': 'Input_down1',
@@ -359,7 +359,7 @@ netParams.connParams['D1MSN->D2MSN'] = {
     'preConds': {'pop': 'D1MSN'}, 
     'postConds': {'pop': 'D2MSN'},
     'sec':'soma_0',
-    'synsPerConn':5,
+    'synsPerConn':1,
     'synMech':'NMDAd2',                   # weight of each connection
      # delay min=0.2, mean=13.0, var = 1.4
     'probability': 'exp(-dist_2D/lengthConst)'}

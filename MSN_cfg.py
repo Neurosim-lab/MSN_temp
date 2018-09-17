@@ -20,13 +20,13 @@ cfg.saveJson = True
 cfg.printPopAvgRates = False
 #cfg.analysis['plotRaster'] = {'saveFig': True} 			# Plot a raster
 #cfg.analysis['plotSpikeStats']={'include' : ['allCells'], 'timeRange' : None, 'graphType': 'boxplot', 'stats' : ['rate', 'isicv'], 'saveData' : 'stat.json', 'saveFig' : 'spikes', 'showFig' : False}
-cfg.analysis['plotRaster'] = {'include' : ['allCells'], 'timeRange' : None, 'maxSpikes' : 1e8, 'orderBy' : 'gid', 'orderInverse' : False, 'labels' : 'legend', 'saveData' : True, 'saveFig' : True, 'showFig' : False}
+cfg.analysis['plotRaster'] = {'include' : ['allCells'], 'timeRange' : None, 'maxSpikes' : 1e8, 'orderBy' : 'gid', 'orderInverse' : False, 'labels' : 'legend', 'saveData' : False, 'saveFig' : True, 'showFig' : False}
 cfg.analysis['plotTraces'] = {'include': [('D1MSN',0),('D2MSN',0),('FSI',0)],'saveFig': True} 		# Plot recorded traces for this list of cells
 
 # Variable parameters (used in netParams)
-cfg.gnmdad1 = 0.00507
-cfg.gnmdad2 = 0.015
-cfg.ampan01 = 1
-cfg.ampan02 = 1
+cfg.gnmdad1 = 0.001
+cfg.gnmdad2 = 0.005
+cfg.fred1 = 10
+cfg.fred2 = 10
 cfg.nmdan01 = 1
 cfg.nmdan02 = 1
